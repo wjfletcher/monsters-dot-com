@@ -4,8 +4,6 @@
 ![Code Climate](https://codeclimate.com/github/suzicurran/monsters-dot-com.png)
 ![Coverage Status](https://coveralls.io/repos/suzicurran/monsters-dot-com/badge.png)
 
-84754160-bf10-0134-0a5c-7a625a3fabd4
-
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
