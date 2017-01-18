@@ -3,6 +3,13 @@ require "rails_helper"
 feature "users can add monsters" do
   scenario "user adds new monster successfully" do
 
+    User.create(email: "user@example.com", password: "password")
+    visit new_monster_path
+    click_link 'Login'
+    fill_in 'Email', with: 'user@example.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Log in'
+
     visit new_monster_path
     expect(page).to have_content "Add a new monster!"
 
@@ -18,6 +25,13 @@ feature "users can add monsters" do
   end
 
   scenario "user does not provide proper information for a monster" do
+
+    User.create(email: "user@example.com", password: "password")
+    visit new_monster_path
+    click_link 'Login'
+    fill_in 'Email', with: 'user@example.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Log in'
 
     visit new_monster_path
     expect(page).to have_content "Add a new monster!"
