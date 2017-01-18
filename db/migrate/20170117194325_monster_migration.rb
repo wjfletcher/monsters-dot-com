@@ -6,6 +6,7 @@ class MonsterMigration < ActiveRecord::Migration[5.0]
       t.string :img, null: false
       t.text :description
       t.string :email
+      t.belongs_to :user, null: false
 
       t.timestamps
     end

@@ -14,6 +14,7 @@ class MonstersController < ApplicationController
 
   def create
     @monster = Monster.new(monster_params)
+    @monster.user_id = current_user.id
     if @monster.save
       flash[:notice] = (@monster.name + " added successfully")
       redirect_to monster_path(@monster)
