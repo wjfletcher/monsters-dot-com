@@ -1,0 +1,42 @@
+<%= form_for (@monster) do |f| %>
+  <% if @monster.errors.any? %>
+  <div class="notice">
+    <h2><%= pluralize(@monster.errors.count, "error") %> prohibited this monster from being saved:</h2>
+
+    <ul>
+      <% @monster.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="form-element">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="form-element">
+    <%= f.label :source %><br />
+    <%= f.text_field :source %>
+  </div>
+
+  <div class="form-element">
+    <%= f.label :img, "Image" %><br />
+    <%= f.text_field :img %>
+  </div>
+
+  <div class="form-element">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="form-element">
+    <%= f.label :email, "Email Address" %><br />
+    <%= f.text_field :email %>
+  </div>
+
+  <div>
+  <%= f.submit(value="Add Me") %>
+  </div>
+<% end %>
