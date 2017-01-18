@@ -1,0 +1,16 @@
+<div>
+  <%= link_to 'All Monsters', monsters_path %>
+</div>
+
+<h1><%= @monster.name %></h1>
+
+<ul>
+  <li><img src= '<%= @monster.img %>' /></li>
+  <li><a href= '<%= @monster.source %>'>Source</a></li>
+  <% unless @monster.description.nil? %>
+    <li><%= @monster.description %></li>
+  <% end %>
+  <% unless @monster.email.nil? %>
+    <li><a href= 'mailto:<%= @monster.email %>'>Contact Me</a></li>
+  <% end %>
+</ul>

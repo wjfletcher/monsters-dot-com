@@ -1,5 +1,3 @@
 class Monster < ApplicationRecord
-  validates :name, presence: true
-  validates :source, presence: true
-  validates :img, presence: true
+  validates_presence_of :name, :img, :source
 end
