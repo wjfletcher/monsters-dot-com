@@ -37,6 +37,14 @@ class MonstersController < ApplicationController
     end
   end
 
+  def destroy
+    @monster = Monster.find(params[:id])
+    name = @monster.name
+    # @monster.reviews = nil
+    @monster.destroy
+    redirect_to monsters_url, notice: 'Monster was successfully destroyed.'
+  end
+
   private
 
   def monster_params
