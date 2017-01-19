@@ -6,7 +6,7 @@ class MonstersController < ApplicationController
   end
 
   def show
-    # @reviews = @monster.reviews
+    @reviews = @monster.reviews
   end
 
   def new
@@ -39,7 +39,6 @@ class MonstersController < ApplicationController
 
   def destroy
     name = @monster.name
-    # @monster.reviews = nil
     @monster.destroy
     redirect_to monsters_url, notice: 'Monster was successfully destroyed.'
   end

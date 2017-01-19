@@ -3,6 +3,13 @@ require "rails_helper"
 feature "visitor submits a new review" do
   scenario "clicks link from monster show page and sees appropriate fields" do
     user_1 = User.create(email: "user@example.com", password: "password")
+
+    visit root_path
+    click_link 'Login'
+    fill_in 'Email', with: 'user@example.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Log in'
+
     this_monster = Monster.create(user_id: user_1.id, name: 'Durin\'s Bane', source: 'http://lotr.wikia.com/wiki/Durin\'s_Bane', img: 'http://static.comicvine.com/uploads/original/5/56730/1086678-balrog2apj.jpg', description: 'Durin\'s Bane refers to the particular Balrog of Morgoth that had fled following Morgoth\'s defeat during the War of Wrath to live and slumber deep within the depths of the Dwarven kingdom of Moria during the Third Age.', email: 'Shadow_and_flame@moria.net')
 
     visit root_path
@@ -19,6 +26,13 @@ feature "visitor submits a new review" do
 
   scenario "submits a review for the monster and sees it on the monster's show page " do
     user_1 = User.create(email: "user@example.com", password: "password")
+
+    visit root_path
+    click_link 'Login'
+    fill_in 'Email', with: 'user@example.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Log in'
+
     this_monster = Monster.create(user_id: user_1.id, name: 'Durin\'s Bane', source: 'http://lotr.wikia.com/wiki/Durin\'s_Bane', img: 'http://static.comicvine.com/uploads/original/5/56730/1086678-balrog2apj.jpg', description: 'Durin\'s Bane refers to the particular Balrog of Morgoth that had fled following Morgoth\'s defeat during the War of Wrath to live and slumber deep within the depths of the Dwarven kingdom of Moria during the Third Age.', email: 'Shadow_and_flame@moria.net')
 
     visit root_path
