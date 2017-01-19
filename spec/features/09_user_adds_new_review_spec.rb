@@ -19,7 +19,7 @@ feature "visitor submits a new review" do
       had fled following Morgoth\'s defeat during the War of Wrath to live and
       slumber deep within the depths of the Dwarven kingdom of Moria during the Third Age.',
       email: 'Shadow_and_flame@moria.net'
-      )
+    )
 
     visit root_path
     click_link this_monster.name
@@ -51,7 +51,7 @@ feature "visitor submits a new review" do
       had fled following Morgoth\'s defeat during the War of Wrath to live and
       slumber deep within the depths of the Dwarven kingdom of Moria during the Third Age.',
       email: 'Shadow_and_flame@moria.net'
-      )
+    )
 
     visit root_path
     click_link this_monster.name

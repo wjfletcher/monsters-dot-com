@@ -18,7 +18,7 @@ class ReviewsController < ApplicationController
       render :new
     end
   end
-  
+
   def update
     if @review.update(review_params)
       redirect_to @monster, notice: "Rating was successfully updated."
@@ -52,4 +52,5 @@ class ReviewsController < ApplicationController
       :body
     )
   end
+
 end
