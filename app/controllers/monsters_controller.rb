@@ -1,11 +1,12 @@
 class MonstersController < ApplicationController
+  before_action :set_monster, only: [:show, :edit, :update, :destroy]
+
   def index
     @monsters = Monster.all
   end
 
   def show
-    @monster = Monster.find(params[:id])
-    # @reviews = @monster.reviews
+    @reviews = @monster.reviews
   end
 
   def new
@@ -25,11 +26,9 @@ class MonstersController < ApplicationController
   end
 
   def edit
-    @monster = Monster.find(params[:id])
   end
 
   def update
-    @monster = Monster.find(params[:id])
 
     if @monster.update(monster_params)
       redirect_to @monster, notice: (@monster.name + " was successfully updated.")
@@ -39,14 +38,16 @@ class MonstersController < ApplicationController
   end
 
   def destroy
-    @monster = Monster.find(params[:id])
     name = @monster.name
-    # @monster.reviews = nil
     @monster.destroy
     redirect_to monsters_url, notice: 'Monster was successfully destroyed.'
   end
 
   private
+
+  def set_monster
+    @monster = Monster.find(params[:id])
+  end
 
   def monster_params
     params.require(:monster).permit(
