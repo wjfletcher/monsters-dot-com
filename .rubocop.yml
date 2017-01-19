@@ -274,5 +274,8 @@ Style/EmptyLinesAroundBlockBody:
 Style/UnneededPercentQ:
   Enabled: false
 
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
 Metrics/AbcSize:
   Enabled: false

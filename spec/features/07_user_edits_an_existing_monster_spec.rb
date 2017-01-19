@@ -12,7 +12,7 @@ feature "visitor goes to edit page for a particular monster" do
 
     expect(page).to have_content monster_2.name
 
-    click_link 'Edit'
+    click_link 'Edit this monster'
 
     fill_in 'Name', with: "Blooky"
 
