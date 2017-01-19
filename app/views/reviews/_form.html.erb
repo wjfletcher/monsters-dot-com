@@ -1,0 +1,47 @@
+<%= form_for [@monster, @review] do |f| %>
+  <% if @review.errors.any? %>
+  <div class="notice">
+    <h2><%= pluralize(@review.errors.count, "error") %> prohibited this rating from being saved:</h2>
+
+    <ul>
+      <% @review.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="form-element">
+    <%= f.label :grossness, "This monster's grossness level:" %><br />
+    Cute <%= f.range_field :grossness, in: 0..6 %> Ugly
+  </div
+
+  <div class="form-element">
+    <%= f.label :scariness, "This monster's scariness level:" %><br />
+    Silly <%= f.range_field :scariness, in: 0..6 %> Scary
+  </div>
+
+  <div class="form-element">
+    <%= f.label :cleverness, "This monster's cleverness level:" %><br />
+    Derpy <%= f.range_field :cleverness, in: 0..6 %> Devious
+  </div>
+
+  <div class="form-element">
+    <%= f.label :bigness, "This monster's bigness level:" %><br />
+    Smol <%= f.range_field :bigness, in: 0..6 %> Huge
+  </div>
+
+  <div class="form-element">
+    <%= f.label :badness, "This monster's badness level:" %><br />
+    Good <%= f.range_field :badness, in: 0..6 %> Evil
+  </div>
+
+  <div class="form-element">
+    <%= f.label :body, "Additional feedback on this monster?" %><br />
+    <%= f.text_field :body %>
+  </div>
+
+  <div class="form-element">
+  <%= f.submit %>
+  </div>
+<% end %>
