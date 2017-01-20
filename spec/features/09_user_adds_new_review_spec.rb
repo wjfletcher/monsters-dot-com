@@ -2,8 +2,7 @@ require "rails_helper"
 
 feature "visitor submits a new review" do
   scenario "clicks link from monster show page and sees appropriate fields" do
-    user1 = User.create(username: "user",
-    email: "user@example.com", password: "password")
+    user1 = User.create(username: "user", email: "user@example.com", password: "password")
 
     visit root_path
     click_link 'Login'
