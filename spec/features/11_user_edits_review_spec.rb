@@ -21,11 +21,12 @@ feature "user edits existing review" do
     fill_in 'Password', with: 'password'
     click_button 'Log in'
 
-    review1 = Review.create(grossness: 3, scariness: 5, cleverness: 2, bigness: 6, badness: 4, body: "Stupid scary monster!", user_id: 1, monster_id: 1)
+    review1 = Review.create(grossness: 3, scariness: 5, cleverness: 2, bigness: 6, badness: 4, body: "Stupid scary monster!", user_id: user1.id, monster_id: this_monster.id)
 
     visit root_path
     click_link this_monster.name
-    click_link "Edit review"
+    expect(page).to have_content("Grossness level: 3/6")
+    click_link 'Edit review'
 
     expect(page).to have_content("grossness level")
     expect(page).to have_content("scariness level")
@@ -43,7 +44,7 @@ feature "user edits existing review" do
 
     click_button "Submit"
 
-    expect(page).to have_content("Review successfully updated")
+    expect(page).to have_content("Rating was successfully updated")
     expect(page).to have_content("Grossness level: 4/6")
     expect(page).to have_content("Cleverness level: 5/6")
     expect(page).to have_content("Bigness level: 6/6")
