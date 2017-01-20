@@ -21,11 +21,21 @@ feature "user edits existing review" do
     fill_in 'Password', with: 'password'
     click_button 'Log in'
 
-    review1 = Review.create(grossness: 3, scariness: 5, cleverness: 2, bigness: 6, badness: 4, body: "Stupid scary monster!", user_id: user1.id, monster_id: this_monster.id)
+    review1 = Review.create(
+      grossness: 3,
+      scariness: 5,
+      cleverness: 2,
+      bigness: 6,
+      badness: 4,
+      body: "Stupid scary monster!",
+      user_id: user1.id,
+      monster_id: this_monster.id
+    )
 
     visit root_path
     click_link this_monster.name
     expect(page).to have_content("Grossness level: 3/6")
+    expect(page).to have_content(review1.body)
     click_link 'Edit review'
 
     expect(page).to have_content("grossness level")
