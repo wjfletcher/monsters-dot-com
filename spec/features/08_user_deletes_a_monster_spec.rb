@@ -9,8 +9,9 @@ feature "user deletes monster from its edit page" do
       user_id: user1.id,
       name: 'Napstablook', source: 'http://undertale.wikia.com/wiki/Napstablook',
       img: 'https://cdn.thingiverse.com/renders/2f/f2/a6/b2/c5/blooky_preview_featured.jpg',
-      description: 'Napstablook, known in the UnderNet as NAPSTABLOOK22, is a melancholic ghost monster and musician/DJ who lives in Waterfall, encountered in the Ruins as Undertale\'s first miniboss.',
-      email: 'Napstablook22@undernet.com')
+      description: 'Napstablook, is a melancholic ghost monster and musician/DJ who lives in Waterfall.',
+      email: 'Napstablook22@undernet.com'
+    )
 
     visit root_path
     click_link monster2.name
