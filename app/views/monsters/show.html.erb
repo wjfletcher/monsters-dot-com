@@ -30,6 +30,7 @@
   <ul>
     <% @reviews.each do |review| %>
     <li><%= render partial: 'review', locals: {review: review} %></li>
+    <%= link_to 'Edit review', edit_monster_review_path(@monster, review) %>
     <% end %>
   </ul>
 <% end %>
