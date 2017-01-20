@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "user edits existing review" do
   scenario "clicks link from monster show page and sees appropriate fields" do
-    user1 = User.create(email: "user@example.com", password: "password")
+    user1 = User.create(username: "user", email: "user@example.com", password: "password")
 
     this_monster = Monster.create(
       user_id: user1.id,
