@@ -5,4 +5,5 @@ class Review < ApplicationRecord
     numericality: true, inclusion: { in: 0..6 }
   belongs_to :user
   belongs_to :monster
+  has_many :votes
 end

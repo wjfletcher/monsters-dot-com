@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :monsters
   has_many :reviews
+  has_many :votes
 end
