@@ -12,17 +12,15 @@ class VotesController < ApplicationController
       else
         flash[:notice] = @vote.errors.full_messages.to_sentence
       end
-      redirect_to @monster
-    elsif (matching_votes.first.value == vote_value)
+    elsif matching_votes.first.value == vote_value
       matching_votes.first.delete
       flash[:notice] = "Vote removed."
-      redirect_to @monster
     else
       matching_votes.first.value = vote_value
       matching_votes.first.save
       flash[:notice] = "Vote successfully changed."
-      redirect_to @monster
     end
+    redirect_to @monster
   end
 
   private
@@ -34,5 +32,4 @@ class VotesController < ApplicationController
   def set_monster
     @monster = Monster.find(params[:monster_id])
   end
-
 end

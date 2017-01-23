@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "visitor can add, change, and remove votes" do
   scenario "clicks buttons in review and changes vote accordingly" do
-    user1 = User.create(email: "user@example.com", password: "password")
+    user1 = User.create(username: "user", email: "user@example.com", password: "password")
 
     visit root_path
     click_link 'Login'
