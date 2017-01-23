@@ -14,12 +14,14 @@ feature "admin can see list of users" do
     click_button 'Log in'
     click_link 'Manage users'
 
-    expect(page).to have_content "All Users"
+    expect(page).to have_content "User Management"
     expect(page).to have_content "Sam"
-    expect(page).to have_content "sam@example.com"
     expect(page).to have_content "Bob"
-    expect(page).to have_content "bob@example.com"
-    expect(page).to have_content "Delete user"
+
+    click_link 'Sam'
+
+    expect(page).to have_content "sam@example.com"
+    expect(page).to have_content "Delete User"
   end
 
   scenario "admin deletes user" do
@@ -35,16 +37,18 @@ feature "admin can see list of users" do
     click_button 'Log in'
     click_link 'Manage users'
 
-    expect(page).to have_content "All Users"
+    expect(page).to have_content "User Management"
     expect(page).to have_content "Sam"
-    expect(page).to have_content "sam@example.com"
     expect(page).to have_content "Bob"
-    expect(page).to have_content "bob@example.com"
-    expect(page).to have_content "Delete user"
 
-    click_button "Delete user"
+    click_link 'Sam'
 
-    expect(page).to have_content "User was successfully deleted"
+    expect(page).to have_content "sam@example.com"
+    expect(page).to have_content "Delete User"
+
+    click_link 'Delete User'
+
+    expect(page).to have_content "User was successfully destroyed."
 
 
   end
