@@ -16,4 +16,5 @@ Rails.application.routes.draw do
       resources :monsters, only: [:index, :create]
     end
   end
+  
 end

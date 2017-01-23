@@ -11,7 +11,6 @@ class MonstersController < ApplicationController
 
   def show
     @reviews = @monster.reviews
-    @vote = Vote.new
   end
 
   def new
@@ -60,8 +59,7 @@ class MonstersController < ApplicationController
       :source,
       :img,
       :description,
-      :email,
-      :user_id
+      :email
     )
   end
 
