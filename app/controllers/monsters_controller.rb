@@ -59,7 +59,8 @@ class MonstersController < ApplicationController
       :source,
       :img,
       :description,
-      :email
+      :email,
+      :user_id
     )
   end
 

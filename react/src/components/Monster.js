@@ -4,8 +4,12 @@ const Monster = props => {
   return(
     <div>
       <h1 className="columns small-offset-2 small-centered">{props.name}</h1>
-      <p className="columns small-offset-2 small-centered"><strong>{props.source}</strong></p>
-      <p className="columns small-offset-2 small-centered">{props.img}</p>
+      <img src={props.img} width="300" height="200"/>
+      <p className="columns small-offset-2 small-centered">
+        <a href={props.source}>
+          <strong>About Me</strong>
+        </a>
+      </p>
       <p className="columns small-offset-2 small-centered">{props.description}</p>
     </div>
   )

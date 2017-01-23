@@ -16,14 +16,13 @@ class App extends Component {
       })
       .done(data => {
         this.setState({
-          monsters: data
+          monsters: data.reverse()
         });
-        console.log(this.state.monsters);
-      })
+      });
   }
 
   render() {
-    let monsters = this.state.monsters.map(monster => {
+    let recentMonsters = this.state.monsters.slice(0, 3).map(monster => {
       return(
         <Monster
           key={monster.id}
@@ -34,11 +33,12 @@ class App extends Component {
           description={monster.description}
          />
       )
+
     })
     return(
       <div>
         <h4>Monsters Added This Week</h4>
-        {monsters}
+        {recentMonsters}
       </div>
       )
     }
