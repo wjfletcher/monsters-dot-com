@@ -5,18 +5,20 @@ feature 'user creates an account' do
   scenario 'specifying valid and required information' do
     visit root_path
     click_link 'Sign up'
+    fill_in 'Username', with: 'user'
     fill_in 'Email', with: 'user@example.com'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
     click_button 'Sign up'
 
-    expect(page).to have_content("Logged in as user@example.com")
+    expect(page).to have_content("Logged in as user")
     expect(page).to have_content("Logout")
   end
 
   scenario 'email is invalid' do
     visit root_path
     click_link 'Sign up'
+    fill_in 'Username', with: 'user'
     fill_in 'Email', with: 'user'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
@@ -29,6 +31,7 @@ feature 'user creates an account' do
   scenario 'required email is not supplied' do
     visit root_path
     click_link 'Sign up'
+    fill_in 'Username', with: 'user'
     fill_in 'Email', with: ''
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
@@ -41,6 +44,7 @@ feature 'user creates an account' do
   scenario 'required password is not supplied' do
     visit root_path
     click_link 'Sign up'
+    fill_in 'Username', with: 'user'
     fill_in 'Email', with: 'user@example.com'
     fill_in 'Password', with: ''
     fill_in 'Password confirmation', with: ''
@@ -53,6 +57,7 @@ feature 'user creates an account' do
   scenario 'password confirmation does not match confirmation' do
     visit root_path
     click_link 'Sign up'
+    fill_in 'Username', with: 'user'
     fill_in 'Email', with: 'user@example.com'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'paswor'

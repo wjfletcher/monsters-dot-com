@@ -19,6 +19,16 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @review = Review.find(params[:id])
+
+    if !user_signed_in?
+      redirect_to monster_path(@review.monster_id), notice: "Please sign in to edit reviews"
+    elsif @review.user_id != current_user.id
+      redirect_to monster_path(@review.monster_id), notice: "You are not the author of this review"
+    end
+  end
+
   def update
     if @review.update(review_params)
       redirect_to @monster, notice: "Rating was successfully updated."

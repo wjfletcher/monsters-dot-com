@@ -38,6 +38,7 @@
       <% downvotes = Vote.where(review_id: review.id, value: "-") %>
       <%= upvotes.length %> user(s) agree(s) | <%= downvotes.length %> user(s) disagree(s)
     </div>
+    <%= link_to 'Edit review', edit_monster_review_path(@monster, review) %>
     <% end %>
   </ul>
 <% end %>
