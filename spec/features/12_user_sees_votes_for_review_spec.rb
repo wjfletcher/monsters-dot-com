@@ -1,7 +1,7 @@
 require "rails_helper"
 
-feature "visitor submits a new review" do
-  scenario "clicks link from monster show page and sees appropriate fields" do
+feature "visitor can add, change, and remove votes" do
+  scenario "clicks buttons in review and changes vote accordingly" do
     user1 = User.create(email: "user@example.com", password: "password")
 
     visit root_path
@@ -34,9 +34,20 @@ feature "visitor submits a new review" do
 
     click_button "Submit"
 
-    click_link('upvote')
+    click_button('+')
 
-    expect(page).to have_content("1 user agrees")
+    expect(page).to have_content("1 user(s) agree(s)")
+    expect(page).to have_content("0 user(s) disagree(s)")
+
+    click_button('-')
+
+    expect(page).to have_content("1 user(s) disagree(s)")
+    expect(page).to have_content("0 user(s) agree(s)")
+
+    click_button('-')
+
+    expect(page).to have_content("0 user(s) agree(s)")
+    expect(page).to have_content("0 user(s) disagree(s)")
 
   end
 end

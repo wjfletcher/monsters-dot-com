@@ -30,6 +30,14 @@
   <ul>
     <% @reviews.each do |review| %>
     <li><%= render partial: 'review', locals: {review: review} %></li>
+    <div>
+      <%= render partial: 'upvote', locals: {review: review} %> <%= render partial: 'downvote', locals: {review: review} %>
+    </div>
+    <div>
+      <% upvotes = Vote.where(review_id: review.id, value: "+") %>
+      <% downvotes = Vote.where(review_id: review.id, value: "-") %>
+      <%= upvotes.length %> user(s) agree(s) | <%= downvotes.length %> user(s) disagree(s)
+    </div>
     <% end %>
   </ul>
 <% end %>
