@@ -3,7 +3,7 @@ require "rails_helper"
 feature "admin can see list of users" do
   scenario "admin views list of users" do
 
-    User.create(username: "admin", email: "admin@example.com", password: "password", role: "admin")
+    User.create(username: "admin", email: "admin@example.com", password: "password", admin: true)
     User.create(username: "Sam", email: "sam@example.com", password: "password")
     User.create(username: "Bob", email: "bob@example.com", password: "password")
 
@@ -24,7 +24,7 @@ feature "admin can see list of users" do
 
   scenario "admin deletes user" do
 
-    User.create(username: "admin", email: "admin@example.com", password: "password", role: "admin")
+    User.create(username: "admin", email: "admin@example.com", password: "password", admin: true)
     User.create(username: "Sam", email: "sam@example.com", password: "password")
     User.create(username: "Bob", email: "bob@example.com", password: "password")
 
