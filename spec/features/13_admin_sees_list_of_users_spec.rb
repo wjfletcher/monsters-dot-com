@@ -9,7 +9,7 @@ feature "admin can see list of users" do
 
     visit root_path
     click_link 'Login'
-    fill_in 'Email', with: 'user@example.com'
+    fill_in 'Email', with: 'admin@example.com'
     fill_in 'Password', with: 'password'
     click_button 'Log in'
     click_link 'Manage users'
@@ -30,7 +30,7 @@ feature "admin can see list of users" do
 
     visit root_path
     click_link 'Login'
-    fill_in 'Email', with: 'user@example.com'
+    fill_in 'Email', with: 'admin@example.com'
     fill_in 'Password', with: 'password'
     click_button 'Log in'
     click_link 'Manage users'
