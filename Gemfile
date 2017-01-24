@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'foundation-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'fog-aws'
+gem 'devise'
 
 group :development do
   gem 'listen', '~> 3.0.5'
@@ -24,7 +25,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'shoulda'
   gem 'valid_attribute'
-  gem 'devise'
+  gem 'dotenv-rails'
 end
 
 group :test do
@@ -33,7 +34,6 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'devise'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
