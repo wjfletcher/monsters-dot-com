@@ -3,6 +3,10 @@ class MonstersController < ApplicationController
 
   def index
     @monsters = Monster.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @monsters }
+    end
   end
 
   def show
