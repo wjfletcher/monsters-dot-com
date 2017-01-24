@@ -11,7 +11,7 @@ feature 'user creates an account' do
     fill_in 'Password confirmation', with: 'password'
     click_button 'Sign up'
 
-    expect(page).to have_content("Logged in as user")
+    expect(page).to have_content("signed up successfully")
     expect(page).to have_content("Logout")
   end
 
