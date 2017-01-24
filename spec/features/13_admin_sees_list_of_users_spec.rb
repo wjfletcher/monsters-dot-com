@@ -50,6 +50,5 @@ feature "admin can see list of users" do
 
     expect(page).to have_content "User was successfully destroyed."
 
-
   end
 end
