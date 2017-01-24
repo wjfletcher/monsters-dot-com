@@ -10,7 +10,7 @@ const Monster = props => {
           <strong>About Me</strong>
         </a>
       </p>
-      <p className="columns small-offset-2 small-centered">{props.description}</p>
+      <p className="columns small-offset-2 small-centered">Description: {props.description}</p>
     </div>
   )
 }

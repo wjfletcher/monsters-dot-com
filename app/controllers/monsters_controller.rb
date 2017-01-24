@@ -11,6 +11,7 @@ class MonstersController < ApplicationController
 
   def show
     @reviews = @monster.reviews
+    @vote = Vote.new
   end
 
   def new
