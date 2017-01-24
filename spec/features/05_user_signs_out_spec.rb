@@ -17,11 +17,11 @@ feature 'user signs in' do
     fill_in 'Password confirmation', with: 'password'
     click_button 'Sign up'
 
-    expect(page).to have_content("Logged in as user")
+    expect(page).to have_content("signed up successfully")
     expect(page).to have_content("Logout")
     click_link 'Logout'
 
-    expect(page).to have_content("Signed out successfully.")
+    expect(page).to have_content("Signed out successfully")
     expect(page).to have_content("Login")
   end
 end

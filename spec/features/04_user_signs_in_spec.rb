@@ -18,7 +18,7 @@ feature 'user signs in' do
     fill_in 'Password confirmation', with: 'password'
     click_button 'Sign up'
 
-    expect(page).to have_content("Logged in as user")
+    expect(page).to have_content("signed up successfully")
     expect(page).to have_content("Logout")
     click_link 'Logout'
     click_link 'Login'
@@ -26,7 +26,7 @@ feature 'user signs in' do
     fill_in 'Password', with: 'password'
     click_button 'Log in'
 
-    expect(page).to have_content("Logged in as user")
+    expect(page).to have_content("Signed in successfully")
     expect(page).to have_content("Logout")
   end
 end
