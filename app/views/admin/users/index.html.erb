@@ -1,0 +1,7 @@
+<h1>User Management</h1>
+
+<ul>
+  <% @users.each do |user| %>
+    <li><%= link_to user.username, admin_user_path(user) %> </li>
+  <% end %>
+</ul>

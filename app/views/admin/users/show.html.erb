@@ -1,0 +1,8 @@
+<div>
+  <%= link_to 'All Users', admin_users_path %>
+   |
+  <%= link_to 'Delete User', [:admin, @user], method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+
+<h1><%= @user.username %></h1>
+<h2><%= @user.email %></h2>

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root "monsters#index"
   devise_for :users
+  resources :users, only: [:show]
   resources :monsters do
     resources :reviews do
       resources :votes do
@@ -11,10 +12,14 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :admin do
+    resources :users, only: [:index, :show, :destroy]
+  end
+
   namespace :api do
     namespace :v1 do
       resources :monsters, only: [:index, :create]
     end
   end
-  
+
 end
