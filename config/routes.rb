@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
   resources :monsters do
+    collection do
+      get 'home'
+    end
     resources :reviews do
       resources :votes do
         collection do

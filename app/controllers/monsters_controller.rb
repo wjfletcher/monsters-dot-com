@@ -1,6 +1,9 @@
 class MonstersController < ApplicationController
   before_action :set_monster, only: [:show, :edit, :update, :destroy]
 
+  def home
+  end
+  
   def index
     @monsters = Monster.all
   end
