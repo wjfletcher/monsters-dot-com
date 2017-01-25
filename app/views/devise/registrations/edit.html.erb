@@ -13,6 +13,13 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :avatar %><br />
+    <%= image_tag(@user.avatar.url, width: "200") if @user.avatar? %>
+    <%= f.file_field :avatar, autofocus: true %>
+    <%= f.hidden_field :avatar_cache, autofocus: true %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
