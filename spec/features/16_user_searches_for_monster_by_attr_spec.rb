@@ -24,5 +24,32 @@ feature "visitor runs a search from home page and sees results" do
     expect(list_elements[0]).to have_content 'Napstablook'
     expect(list_elements[1]).to have_content 'Cookie Monster'
     expect(list_elements[2]).to have_content 'Durin\'s Bane'
+
+    visit home_monsters_path
+    click_link 'Ugly'
+
+    list_elements = page.all('#monster-list li')
+
+    expect(list_elements[1]).to have_content 'Napstablook'
+    expect(list_elements[0]).to have_content 'Cookie Monster'
+    expect(list_elements[2]).to have_content 'Durin\'s Bane'
+
+    visit home_monsters_path
+    click_link 'Silly'
+
+    list_elements = page.all('#monster-list li')
+
+    expect(list_elements[1]).to have_content 'Napstablook'
+    expect(list_elements[0]).to have_content 'Cookie Monster'
+    expect(list_elements[2]).to have_content 'Durin\'s Bane'
+
+    visit home_monsters_path
+    click_link 'Scary'
+
+    list_elements = page.all('#monster-list li')
+
+    expect(list_elements[0]).to have_content 'Napstablook'
+    expect(list_elements[1]).to have_content 'Cookie Monster'
+    expect(list_elements[2]).to have_content 'Durin\'s Bane'
   end
 end
