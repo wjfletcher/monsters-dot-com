@@ -4,18 +4,23 @@
 
     <div class="row text-center" id="add-monster-banner">
       <div class="white-text">
-        <h2>Find The Right Monster For The Job</h2>
+        <h2>The Right Monster For The Job</h2>
       </div>
       <div class="text-center">
-        <ul class="dropdown menu align-middle" data-dropdown-menu>
+        <ul class="dropdown menu align-middle-dropdown" data-dropdown-menu>
           <li>
-            <div class="find-monster-dropdown">View monsters by:</div>
+            <div class="find-monster-dropdown">Find a monster who is:</div>
             <ul class="menu">
-              <a href="#">Scariness</a>
-              <li><a href="#">Grossness</a></li>
-              <li><a href="#">Cleverness</a></li>
-              <li><a href="#">Bigness</a></li>
-              <li><a href="#">Badness</a></li>
+              <li><%= link_to "Cute", monsters_path(:sort_by => "cute") %></li>
+              <li><%= link_to "Ugly", monsters_path(:sort_by => "ugly") %></li>
+              <li><%= link_to "Silly", monsters_path(:sort_by => "silly") %></li>
+              <li><%= link_to "Scary", monsters_path(:sort_by => "scary") %></li>
+              <li><%= link_to "Devious", monsters_path(:sort_by => "devious") %></li>
+              <li><%= link_to "Derpy", monsters_path(:sort_by => "derpy") %></li>
+              <li><%= link_to "Smol", monsters_path(:sort_by => "smol") %></li>
+              <li><%= link_to "Huge", monsters_path(:sort_by => "huge") %></li>
+              <li><%= link_to "Good", monsters_path(:sort_by => "good") %></li>
+              <li><%= link_to "Evil", monsters_path(:sort_by => "evil") %></li>
             </ul>
           </li>
         </ul>
