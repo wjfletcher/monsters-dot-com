@@ -13,29 +13,29 @@ class MonstersController < ApplicationController
       attribute_ascending = true
 
       case search
-        when "cute"
+      when "cute"
         attribute_search = "grossness"
-        when "ugly"
+      when "ugly"
         attribute_search = "grossness"
         attribute_ascending = false
-        when "silly"
+      when "silly"
         attribute_search = "scariness"
-        when "scary"
+      when "scary"
         attribute_search = "scariness"
         attribute_ascending = false
-        when "derpy"
+      when "derpy"
         attribute_search = "cleverness"
-        when "devious"
+      when "devious"
         attribute_search = "cleverness"
         attribute_ascending = false
-        when "smol"
+      when "smol"
         attribute_search = "bigness"
-        when "huge"
+      when "huge"
         attribute_search = "bigness"
         attribute_ascending = false
-        when "good"
+      when "good"
         attribute_search = "badness"
-        when "evil"
+      when "evil"
         attribute_search = "badness"
         attribute_ascending = false
       end
