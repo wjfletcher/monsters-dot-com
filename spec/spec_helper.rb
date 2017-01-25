@@ -44,7 +44,6 @@ RSpec.configure do |config|
   end
 
   config.after(:all) do
-  # Get rid of the linked images
     if Rails.env.test?
       FileUtils.rm_rf(Rails.root + "public/uploads/user/avatar")
     end
