@@ -8,10 +8,53 @@ class MonstersController < ApplicationController
     if params[:sort_by] != nil
       search = params[:sort_by]
       @header = "Looking for " + search + " monsters"
-      @monsters = Monster.all
+
+      attribute_search = ""
+      attribute_ascending = true
+
+      case search
+        when "cute"
+          attribute_search = "grossness"
+        when "ugly"
+          attribute_search = "grossness"
+          attribute_ascending = false
+        when "silly"
+          attribute_search = "scariness"
+        when "scary"
+          attribute_search = "scariness"
+          attribute_ascending = false
+        when "derpy"
+          attribute_search = "cleverness"
+        when "devious"
+          attribute_search = "cleverness"
+          attribute_ascending = false
+        when "smol"
+          attribute_search = "bigness"
+        when "huge"
+          attribute_search = "bigness"
+          attribute_ascending = false
+        when "good"
+          attribute_search = "badness"
+        when "evil"
+          attribute_search = "badness"
+          attribute_ascending = false
+      end
+
+      all_monsters = Monster.all
+      @monsters = all_monsters.sort do |a, b|
+        if a.send(attribute_search) == "?"
+          1
+        else
+          if attribute_ascending
+            a.send(attribute_search) <=> b.send(attribute_search)
+          else
+            b.send(attribute_search) <=> a.send(attribute_search)
+          end
+        end
+      end
     else
       @header = "Monsters (by name)"
-      @monsters = Monster.all
+      @monsters = Monster.order(:name)
     end
     respond_to do |format|
       format.html
