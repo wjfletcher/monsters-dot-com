@@ -1,6 +1,6 @@
 <h1><%= @header %> on Monsters.com</h1>
 
-<ul>
+<ul id="monster-list">
   <% @monsters.each do |monster| %>
     <li><%= link_to monster.name, monster %> </li>
   <% end %>
