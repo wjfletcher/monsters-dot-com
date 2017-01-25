@@ -7,7 +7,7 @@ feature "Any review" do
     user1 = User.create(username: "Sam", email: "sam@example.com", password: "password")
     User.create(username: "Bob", email: "bob@example.com", password: "password")
 
-    Monster.create(
+    monster2 = Monster.create(
       user_id: user1.id,
       name: 'Napstablook', source: 'http://undertale.wikia.com/wiki/Napstablook',
       img: 'https://cdn.thingiverse.com/renders/2f/f2/a6/b2/c5/blooky_preview_featured.jpg',
