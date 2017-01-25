@@ -11,7 +11,7 @@
           <li>
             <div class="find-monster-dropdown">Find a monster who is:</div>
             <ul class="menu">
-              <li><a href="#">Cute</a></li>
+              <li><%= link_to "Cute", monsters_path(:sort_by => "cute") %></li>
               <li><a href="#">Ugly</a></li>
               <li><a href="#">Silly</a></li>
               <li><a href="#">Scary</a></li>

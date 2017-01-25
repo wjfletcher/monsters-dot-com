@@ -3,9 +3,16 @@ class MonstersController < ApplicationController
 
   def home
   end
-  
+
   def index
-    @monsters = Monster.all
+    if params[:sort_by] != nil
+      search = params[:sort_by]
+      @header = "Looking for " + search + " monsters"
+      @monsters = Monster.all
+    else
+      @header = "Monsters (by name)"
+      @monsters = Monster.all
+    end
     respond_to do |format|
       format.html
       format.json { render json: @monsters }
