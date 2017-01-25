@@ -40,6 +40,7 @@ feature "visitor sees page of all monsters" do
 
     visit root_path
 
+    expect(page).to have_content "Monsters (by name)"
     expect(page).to have_content monster1.name
     expect(page).to have_content monster2.name
     expect(page).to have_content monster3.name
