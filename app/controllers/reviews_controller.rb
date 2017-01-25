@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
   before_action :set_monster
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def new
     @review = Review.new
@@ -21,10 +22,7 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
-
-    if !user_signed_in?
-      redirect_to monster_path(@review.monster_id), notice: "Please sign in to edit reviews"
-    elsif @review.user_id != current_user.id
+    if @review.user_id != current_user.id
       redirect_to monster_path(@review.monster_id), notice: "You are not the author of this review"
     end
   end

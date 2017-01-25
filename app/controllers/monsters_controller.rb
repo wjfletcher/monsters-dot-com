@@ -50,7 +50,6 @@ class MonstersController < ApplicationController
       flash[:notice] = "You are not authorized to delete this monster"
       render :edit
     elsif current_user.id == @monster.user_id || current_user.admin?
-      binding.pry
       name = @monster.name
       @monster.destroy
       redirect_to monsters_url, notice: 'Monster was successfully destroyed.'
