@@ -36,7 +36,7 @@ feature "monster show page displays average scores for attributes based on revie
     visit root_path
     click_link 'Logout'
 
-    user2 = User.create(username: "user2", email: "user2@example.com", password: "password2")
+    User.create(username: "user2", email: "user2@example.com", password: "password2")
 
     visit root_path
     click_link 'Login'
