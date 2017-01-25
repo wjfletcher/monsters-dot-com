@@ -20,7 +20,9 @@
 </div>
 
 <div>
-  <%= link_to 'Edit this monster', edit_monster_path(@monster) %>
+  <% if current_user.id == @monster.user_id || current_user.admin? %>
+    <%= link_to 'Edit this monster', edit_monster_path(@monster) %>
+  <% end %>
 </div>
 
 <h1>Ratings</h1>
