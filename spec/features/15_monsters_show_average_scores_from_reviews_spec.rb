@@ -55,6 +55,8 @@ feature "monster show page displays average scores for attributes based on revie
     fill_in "This monster's badness level:", with: 5
     fill_in "Additional feedback on this monster?", with: "You shall not pass!"
 
+    click_button "Submit"
+
     expect(page).to have_content("Average grossness level: 3/6")
     expect(page).to have_content("Average scariness level: 5/6")
     expect(page).to have_content("Average cleverness level: 5/6")
