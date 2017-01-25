@@ -4,7 +4,7 @@ class Monster < ApplicationRecord
   has_many :reviews, dependent: :destroy
 
   def grossness
-    my_reviews = Review.where(monster_id: self.id)
+    my_reviews = Review.where(monster_id: id)
     total = 0
     if my_reviews.empty?
       "?"
@@ -17,7 +17,7 @@ class Monster < ApplicationRecord
   end
 
   def scariness
-    my_reviews = Review.where(monster_id: self.id)
+    my_reviews = Review.where(monster_id: id)
     total = 0
     if my_reviews.empty?
       "?"
@@ -30,7 +30,7 @@ class Monster < ApplicationRecord
   end
 
   def cleverness
-    my_reviews = Review.where(monster_id: self.id)
+    my_reviews = Review.where(monster_id: id)
     total = 0
     if my_reviews.empty?
       "?"
@@ -43,7 +43,7 @@ class Monster < ApplicationRecord
   end
 
   def bigness
-    my_reviews = Review.where(monster_id: self.id)
+    my_reviews = Review.where(monster_id: id)
     total = 0
     if my_reviews.empty?
       "?"
@@ -56,7 +56,7 @@ class Monster < ApplicationRecord
   end
 
   def badness
-    my_reviews = Review.where(monster_id: self.id)
+    my_reviews = Review.where(monster_id: id)
     total = 0
     if my_reviews.empty?
       "?"

@@ -19,7 +19,7 @@ feature "visitor runs a search from home page and sees results" do
       admin: true
     )
 
-    balrog = Monster.create(
+    Monster.create(
       user_id: user1.id,
       name: 'Durin\'s Bane',
       source: 'http://lotr.wikia.com/wiki/Durin\'s_Bane',
