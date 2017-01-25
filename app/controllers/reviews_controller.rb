@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
 
   def edit
     @review = Review.find(params[:id])
-    if @review.user_id != current_user.id
+    if @review.user_id != current_user.id && !current_user.admin?
       redirect_to monster_path(@review.monster_id), notice: "You are not the author of this review"
     end
   end

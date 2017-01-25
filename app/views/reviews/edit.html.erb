@@ -1,3 +1,8 @@
 <h1>Edit rating for <%= @monster.name %></h1>
 
 <%= render 'form' %>
+
+<br />
+<%= link_to 'Delete', [@monster, @review], method: :delete, data: { confirm: 'Are you sure?' } %>
+ |
+ <%= link_to 'Back', [@monster, @review] %>
