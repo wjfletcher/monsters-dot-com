@@ -1,6 +1,9 @@
+<div class="row text-center white-text" id="add-monster-banner">
 <h2>Log in</h2>
-
+</div>
+<div class="row text-center" id="add-background-light">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-element">
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -19,8 +22,10 @@
   <% end -%>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class: "button" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
