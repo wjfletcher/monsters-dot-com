@@ -62,6 +62,19 @@
   margin-top: 20px;
 }
 
+.vote-buttons form {
+  display: inline;
+}
+
+.form-element {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.vote-buttons input[type=submit] {
+  width: 150px;
+}
+
 .no-bullets {
   list-style: none;
 }
@@ -82,6 +95,10 @@
   background-color: #9064AB;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .find-monster-dropdown {
   background-color: #327CC4;
   color: #FFF;
@@ -94,6 +111,31 @@
   max-width: 200px;
 }
 
+.button {
+  background-color: #351D75;
+  width: 150px;
+}
+
+#monster-list {
+  margin: 0;
+}
+
+#add-background-purple {
+  background: #6C0093;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  padding: 120px 10px 120px 10px;
+}
+
+#add-background-light {
+  background: #F7F7F7;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  padding: 50px 10px 50px 10px;
+}
+
 
 #add-monster-banner {
   background-image: linear-gradient(
@@ -101,6 +143,17 @@
       rgba(108, 0, 147, 0.7)
     ),
     url(http://www.zastavki.com/pictures/originals/2014/Funny_wallpapers_____Teacher_monster_083315_.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  padding: 120px 10px 120px 10px;
+}
+
+#show-monster-banner {
+  background-image: linear-gradient(
+      rgba(108, 0, 147, 0.7),
+      rgba(255, 255, 255, 0.7)
+    );
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;

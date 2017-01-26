@@ -1,7 +1,10 @@
-<h1>User Management</h1>
-
-<ul>
+<div class="row text-center white-text" id="add-monster-banner">
+  <h1>User Management</h1>
+</div>
+<div class="row text-center no-bullets" id="add-background-light">
+<ul class="no-bullets">
   <% @users.each do |user| %>
-    <li><%= link_to user.username, admin_user_path(user) %> </li>
+    <li><h4><%= link_to user.username, admin_user_path(user) %> </h4></li>
   <% end %>
 </ul>
+</div>

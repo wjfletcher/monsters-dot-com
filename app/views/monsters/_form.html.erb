@@ -1,31 +1,31 @@
 <%= form_for (@monster) do |f| %>
-  
+
   <div class="form-element">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
-
+  <br />
   <div class="form-element">
-    <%= f.label :source %><br />
+    <%= f.label :source %>
     <%= f.text_field :source %>
   </div>
-
+  <br />
   <div class="form-element">
-    <%= f.label :img, "Image" %><br />
+    <%= f.label :img, "Image" %>
     <%= f.text_field :img %>
   </div>
-
+  <br />
   <div class="form-element">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
   </div>
-
+  <br />
   <div class="form-element">
-    <%= f.label :email, "Email Address" %><br />
+    <%= f.label :email, "Email Address" %>
     <%= f.text_field :email %>
   </div>
-
+  <br />
   <div>
-  <%= f.submit(value="Save") %>
+  <%= f.submit "Save", class: "button" %>
   </div>
 <% end %>

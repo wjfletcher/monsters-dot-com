@@ -34,17 +34,17 @@ feature "visitor can add, change, and remove votes" do
 
     click_button "Submit"
 
-    click_button('+')
+    click_button('Agree')
 
     expect(page).to have_content("1 user(s) agree(s)")
     expect(page).to have_content("0 user(s) disagree(s)")
 
-    click_button('-')
+    click_button('Disagree')
 
     expect(page).to have_content("1 user(s) disagree(s)")
     expect(page).to have_content("0 user(s) agree(s)")
 
-    click_button('-')
+    click_button('Disagree')
 
     expect(page).to have_content("0 user(s) agree(s)")
     expect(page).to have_content("0 user(s) disagree(s)")
