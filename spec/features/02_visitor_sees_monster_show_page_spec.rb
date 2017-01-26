@@ -27,7 +27,7 @@ feature "visitor sees details for a particular monster" do
       email: 'Napstablook22@undernet.com'
     )
 
-    visit root_path
+    visit monsters_path
     expect(page).to have_content monster1.name
     click_link monster2.name
 

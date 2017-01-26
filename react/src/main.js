@@ -6,6 +6,6 @@ import App from './components/App';
 $(function() {
   ReactDOM.render(
     <App />,
-    document.getElementById('app')
+    document.getElementById('recently-added-monsters');
   );
 });
