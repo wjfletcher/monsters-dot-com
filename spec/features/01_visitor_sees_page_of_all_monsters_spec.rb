@@ -38,7 +38,7 @@ feature "visitor sees page of all monsters" do
       email: 'mewantcookie@sstreet.org'
     )
 
-    visit root_path
+    visit monsters_path
 
     expect(page).to have_content "Monsters (by name)"
     expect(page).to have_content monster1.name

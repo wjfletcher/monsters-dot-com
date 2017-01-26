@@ -19,6 +19,7 @@ feature "user deletes monster from its edit page" do
     fill_in 'Email', with: 'user@example.com'
     fill_in 'Password', with: 'password'
     click_button 'Log in'
+    visit monsters_path
     click_link monster2.name
 
     expect(page).to have_content monster2.name

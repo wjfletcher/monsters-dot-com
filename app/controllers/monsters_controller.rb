@@ -2,6 +2,12 @@ class MonstersController < ApplicationController
   before_action :set_monster, only: [:show, :edit, :update, :destroy]
 
   def home
+    @monsters = Monster.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @monsters }
+    end
   end
 
   def index
@@ -44,6 +50,8 @@ class MonstersController < ApplicationController
       @monsters = all_monsters.sort do |a, b|
         if a.send(attribute_search) == "?"
           1
+        elsif b.send(attribute_search) == "?"
+          -1
         elsif attribute_ascending
           a.send(attribute_search) <=> b.send(attribute_search)
         else
@@ -54,6 +62,7 @@ class MonstersController < ApplicationController
       @header = "Monsters (by name)"
       @monsters = Monster.order(:name)
     end
+
     respond_to do |format|
       format.html
       format.json { render json: @monsters }

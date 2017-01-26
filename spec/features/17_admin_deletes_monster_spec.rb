@@ -21,6 +21,7 @@ feature "Any monster" do
     fill_in 'Email', with: 'admin@example.com'
     fill_in 'Password', with: 'password'
     click_button 'Log in'
+    visit monsters_path
     click_link 'Napstablook'
 
     expect(page).to have_content "Edit this monster"
@@ -47,11 +48,12 @@ feature "Any monster" do
       email: 'Napstablook22@undernet.com'
     )
 
-    visit root_path
+    visit monsters_path
     click_link 'Login'
     fill_in 'Email', with: 'bob@example.com'
     fill_in 'Password', with: 'password'
     click_button 'Log in'
+    visit monsters_path
     click_link 'Napstablook'
 
     expect(page).not_to have_content "Edit this monster"
