@@ -2,24 +2,25 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
 # Examples:
-user1 = User.create(
+
+user1 = User.create!(
   email: "user@example.com",
   password: "password",
   username: "Cool User"
 )
-user2 = User.create(
+user2 = User.create!(
   email: "user2@example.com",
   password: "password2",
   username: "User 2"
 )
-suzi = User.create(
+suzi = User.create!(
   email: "suzi@fakeemail.com",
   password: "PASSWORD",
   username: "Suzi Curran",
   admin: true
 )
 
-Monster.create(
+Monster.create!(
   user_id: user1.id,
   name: 'Durin\'s Bane',
   source: 'http://lotr.wikia.com/wiki/Durin\'s_Bane',
@@ -30,7 +31,7 @@ Monster.create(
   email: 'Shadow_and_flame@moria.net'
 )
 
-blooky = Monster.create(
+blooky = Monster.create!(
   user_id: user1.id,
   name: 'Napstablook',
   source: 'http://undertale.wikia.com/wiki/Napstablook',
@@ -41,7 +42,7 @@ blooky = Monster.create(
   email: 'Napstablook22@undernet.com'
 )
 
-cookiemonster = Monster.create(
+cookiemonster = Monster.create!(
   user_id: user1.id,
   name: 'Cookie Monster',
   source: 'https://en.wikipedia.org/wiki/Cookie_Monster',
@@ -53,7 +54,7 @@ cookiemonster = Monster.create(
   email: 'mewantcookie@sstreet.org'
 )
 
-Review.create(
+Review.create!(
   user_id: suzi.id,
   monster_id: blooky.id,
   grossness: 0, scariness: 0,
@@ -61,7 +62,7 @@ Review.create(
   badness: 0, body: "The dapperest."
 )
 
-Review.create(
+Review.create!(
   user_id: user1.id,
   monster_id: blooky.id,
   grossness: 2, scariness: 6,
@@ -69,7 +70,7 @@ Review.create(
   badness: 0, body: "Not very cute! Very scary!"
 )
 
-Review.create(
+Review.create!(
   user_id: user1.id,
   monster_id: cookiemonster.id,
   grossness: 2, scariness: 1,
@@ -77,7 +78,7 @@ Review.create(
   badness: 0, body: "Huggable. Yay cookies!"
 )
 
-Review.create(
+Review.create!(
   user_id: user2.id,
   monster_id: cookiemonster.id,
   grossness: 4, scariness: 1,
