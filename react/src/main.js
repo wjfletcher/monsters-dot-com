@@ -4,8 +4,10 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 
 $(function() {
-  ReactDOM.render(
-    <App />,
-    document.getElementById('recently-added-monsters');
-  );
+  if (document.getElementById('recently-added-monsters')) {
+    ReactDOM.render(
+      <App />,
+      document.getElementById('recently-added-monsters')
+    );
+  }
 });
