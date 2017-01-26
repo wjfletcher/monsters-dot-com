@@ -50,6 +50,8 @@ class MonstersController < ApplicationController
       @monsters = all_monsters.sort do |a, b|
         if a.send(attribute_search) == "?"
           1
+        elsif b.send(attribute_search) == "?"
+          -1
         elsif attribute_ascending
           a.send(attribute_search) <=> b.send(attribute_search)
         else

@@ -4,7 +4,7 @@ feature "visitor can add, change, and remove votes" do
   scenario "clicks buttons in review and changes vote accordingly" do
     user1 = User.create(username: "user", email: "user@example.com", password: "password")
 
-    visit root_path
+    visit monsters_path
     click_link 'Login'
     fill_in 'Email', with: 'user@example.com'
     fill_in 'Password', with: 'password'
@@ -21,7 +21,7 @@ feature "visitor can add, change, and remove votes" do
       email: 'Shadow_and_flame@moria.net'
     )
 
-    visit root_path
+    visit monsters_path
     click_link this_monster.name
     click_link "Rate this monster"
 
