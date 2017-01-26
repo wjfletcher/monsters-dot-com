@@ -7,39 +7,26 @@ class App extends Component {
     this.state = {
       monsters: []
     };
+    this.getMonsters = this.getMonsters.bind(this)
   }
+
 
   componentDidMount() {
-    $.ajax({
-        method: "GET",
-        url: "/monsters/home.json",
-      })
-      .done(data => {
-        this.setState({
-          monsters: data.reverse()
-        });
-      });
-  }
+     this.getMonsters();
+     setInterval(this.getMonsters, 3000);
+   }
 
-  // componentDidMount() {
-  //   tick() {
-  //     $.ajax({
-  //         type: "GET",
-  //         url: "/monsters/home.json",
-  //         dataType: "JSON",
-  //         success:function(data){
-  //           this.setState({monsters: data});
-  //
-  //           this.timer = setTimeout(tick, 500);
-  //         }.bind(this)
-  //     });
-  //   };
-  //   tick();
-  // },
-  // componentWillUnmount: function() {
-  //   clearTimeout(this.timer);
-  // }
-
+   getMonsters () {
+     $.ajax({
+         method: "GET",
+         url: "/monsters/home.json",
+       })
+       .done(data => {
+         this.setState({
+           monsters: data.reverse()
+         });
+       });
+   }
 
   render() {
     let recentMonsters = this.state.monsters.slice(0, 3).map(monster => {
