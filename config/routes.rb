@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "monsters#index"
+  root "monsters#home"
   devise_for :users
   resources :users, only: [:show]
   resources :monsters do
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :monsters, only: [:index, :create]
+      resources :monsters, only: [:index, :home, :create]
     end
   end
 

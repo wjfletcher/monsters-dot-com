@@ -15,7 +15,7 @@ feature "user edits existing review" do
       email: 'Shadow_and_flame@moria.net'
     )
 
-    visit root_path
+    visit monsters_path
     click_link 'Login'
     fill_in 'Email', with: 'user@example.com'
     fill_in 'Password', with: 'password'
@@ -32,7 +32,7 @@ feature "user edits existing review" do
       monster_id: this_monster.id
     )
 
-    visit root_path
+    visit monsters_path
     click_link this_monster.name
     expect(page).to have_content("Grossness level: 3/6")
     expect(page).to have_content(review1.body)

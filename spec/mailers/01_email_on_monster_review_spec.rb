@@ -1,10 +1,12 @@
 require "rails_helper"
+include ActiveJob::TestHelper
 
-feature "visitor can add, change, and remove votes" do
-  scenario "clicks buttons in review and changes vote accordingly" do
+feature "email is sent to creator upon new review" do
+  scenario "user adds a review to a monster" do
+    ActionMailer::Base.deliveries = []
     user1 = User.create(username: "user", email: "user@example.com", password: "password")
 
-    visit monsters_path
+    visit root_path
     click_link 'Login'
     fill_in 'Email', with: 'user@example.com'
     fill_in 'Password', with: 'password'
@@ -34,20 +36,7 @@ feature "visitor can add, change, and remove votes" do
 
     click_button "Submit"
 
-    click_button('Agree')
-
-    expect(page).to have_content("1 user(s) agree(s)")
-    expect(page).to have_content("0 user(s) disagree(s)")
-
-    click_button('Disagree')
-
-    expect(page).to have_content("1 user(s) disagree(s)")
-    expect(page).to have_content("0 user(s) agree(s)")
-
-    click_button('Disagree')
-
-    expect(page).to have_content("0 user(s) agree(s)")
-    expect(page).to have_content("0 user(s) disagree(s)")
-
+    expect(page).to have_content("You shall not pass!")
+    expect(ActionMailer::Base.deliveries.count).to eq(1)
   end
 end

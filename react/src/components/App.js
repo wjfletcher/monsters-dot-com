@@ -7,19 +7,26 @@ class App extends Component {
     this.state = {
       monsters: []
     };
+    this.getMonsters = this.getMonsters.bind(this)
   }
 
+
   componentDidMount() {
-    $.ajax({
-        method: "GET",
-        url: "/monsters.json",
-      })
-      .done(data => {
-        this.setState({
-          monsters: data.reverse()
-        });
-      });
-  }
+     this.getMonsters();
+     setInterval(this.getMonsters, 3000);
+   }
+
+   getMonsters () {
+     $.ajax({
+         method: "GET",
+         url: "/monsters/home.json",
+       })
+       .done(data => {
+         this.setState({
+           monsters: data.reverse()
+         });
+       });
+   }
 
   render() {
     let recentMonsters = this.state.monsters.slice(0, 3).map(monster => {
@@ -36,8 +43,8 @@ class App extends Component {
 
     })
     return(
-      <div>
-        <h4>Monsters Added This Week</h4>
+      <div className="row text-center" id="recently-added-monsters">
+        <h2>Recently Added Monsters</h2>
         {recentMonsters}
       </div>
       )

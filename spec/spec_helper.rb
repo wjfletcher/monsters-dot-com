@@ -43,6 +43,10 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
+  config.before :each do
+    ActionMailer::Base.deliveries.clear
+  end
+
   config.after(:all) do
     if Rails.env.test?
       FileUtils.rm_rf(Rails.root + "public/uploads/user/avatar")

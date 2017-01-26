@@ -4,7 +4,7 @@ feature "visitor submits a new review" do
   scenario "clicks link from monster show page and sees appropriate fields" do
     user1 = User.create(username: "user", email: "user@example.com", password: "password")
 
-    visit root_path
+    visit monsters_path
     click_link 'Login'
     fill_in 'Email', with: 'user@example.com'
     fill_in 'Password', with: 'password'
@@ -21,7 +21,7 @@ feature "visitor submits a new review" do
       email: 'Shadow_and_flame@moria.net'
     )
 
-    visit root_path
+    visit monsters_path
     click_link this_monster.name
     click_link "Rate this monster"
 
@@ -36,7 +36,7 @@ feature "visitor submits a new review" do
   scenario "submits a review for the monster and sees it on the monster's show page " do
     user1 = User.create(username: "user", email: "user@example.com", password: "password")
 
-    visit root_path
+    visit monsters_path
     click_link 'Login'
     fill_in 'Email', with: 'user@example.com'
     fill_in 'Password', with: 'password'
@@ -53,7 +53,7 @@ feature "visitor submits a new review" do
       email: 'Shadow_and_flame@moria.net'
     )
 
-    visit root_path
+    visit monsters_path
     click_link this_monster.name
     click_link "Rate this monster"
 
