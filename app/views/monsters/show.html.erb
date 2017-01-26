@@ -65,7 +65,7 @@
 
 <div class="row text-center">
 <h3>Ratings</h3>
-<% if @reviews.nil? %>
+<% if @reviews.empty? %>
   We don't have any ratings for this monster yet!
 <% else %>
   <% @reviews.each do |review| %>
