@@ -12,7 +12,7 @@ class App extends Component {
   componentDidMount() {
     $.ajax({
         method: "GET",
-        url: "/monsters.json",
+        url: "/monsters/home.json",
       })
       .done(data => {
         this.setState({
@@ -20,6 +20,26 @@ class App extends Component {
         });
       });
   }
+
+  // componentDidMount() {
+  //   tick() {
+  //     $.ajax({
+  //         type: "GET",
+  //         url: "/monsters/home.json",
+  //         dataType: "JSON",
+  //         success:function(data){
+  //           this.setState({monsters: data});
+  //
+  //           this.timer = setTimeout(tick, 500);
+  //         }.bind(this)
+  //     });
+  //   };
+  //   tick();
+  // },
+  // componentWillUnmount: function() {
+  //   clearTimeout(this.timer);
+  // }
+
 
   render() {
     let recentMonsters = this.state.monsters.slice(0, 3).map(monster => {
@@ -36,8 +56,8 @@ class App extends Component {
 
     })
     return(
-      <div>
-        <h4>Monsters Added This Week</h4>
+      <div className="row text-center" id="recently-added-monsters">
+        <h2>Recently Added Monsters</h2>
         {recentMonsters}
       </div>
       )

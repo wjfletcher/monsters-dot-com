@@ -30,6 +30,19 @@
 
 .recent-monster {
   border-radius: 50%;
+  width: 100%;
+  height: 300px
+}
+
+.center-cropped {
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.center-cropped img {
+  max-width: 100%;
+  min-height: auto;
+  width: 300px;
 }
 
 #recently-added-monsters {

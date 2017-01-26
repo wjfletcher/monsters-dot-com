@@ -2,6 +2,12 @@ class MonstersController < ApplicationController
   before_action :set_monster, only: [:show, :edit, :update, :destroy]
 
   def home
+    @monsters = Monster.all
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @monsters }
+    end
   end
 
   def index
@@ -54,6 +60,7 @@ class MonstersController < ApplicationController
       @header = "Monsters (by name)"
       @monsters = Monster.order(:name)
     end
+
     respond_to do |format|
       format.html
       format.json { render json: @monsters }

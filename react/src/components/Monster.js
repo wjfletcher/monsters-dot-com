@@ -1,18 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 const Monster = props => {
   return(
-    <div>
-      <h1 className="columns small-offset-2 small-centered">{props.name}</h1>
-      <img src={props.img} width="300" height="200"/>
-      <p className="columns small-offset-2 small-centered">
-        <a href={props.source}>
-          <strong>About Me</strong>
-        </a>
-      </p>
-      <p className="columns small-offset-2 small-centered">Description: {props.description}</p>
+    <div className="large-4 small-12 column center-cropped">
+      <img className="recent-monster" src={props.img} />
+      <br /><a href={props.source}><h4>{props.name}</h4></a>
     </div>
-  )
-}
+  );
+};
 
 export default Monster;
