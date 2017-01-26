@@ -70,7 +70,7 @@ feature "visitor submits a new review" do
     expect(page).to have_content("Cleverness level: 5/6")
     expect(page).to have_content("Bigness level: 6/6")
     expect(page).to have_content("You shall not pass!")
-    expect(page).to have_content(user1.email)
+    expect(page).to have_content(user1.username)
 
   end
 end

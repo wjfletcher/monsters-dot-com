@@ -1,4 +1,5 @@
-<h3><%= review.user.email %> has this to say about <%= @monster.name %>:</h3>
+
+<h3><%= review.user.username %> has this to say about <%= @monster.name %>:</h3>
 <ul class="no-bullets">
   <div class="large-4 small-12 column">
   <li><h4>Grossness level:</h4> <%= review.grossness %>/6</li>
@@ -15,6 +16,7 @@
   <div class="large-6 small-12 column">
   <li><h4>Badness level:</h4> <%= review.badness %>/6</li>
   </div>
+
 </ul>
 <% unless review.body.nil? %>
   <h3>Additional feedback:</h3> <%= review.body %>

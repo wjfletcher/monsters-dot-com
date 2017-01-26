@@ -5,7 +5,7 @@
 <div class="row text-center" id="add-backgound-light">
 <ul class="no-bullets" id="monster-list">
   <% @monsters.each do |monster| %>
-    <h3><%= link_to monster.name, monster %> </h3>
+    <li><h3><%= link_to monster.name, monster %> </h3></li>
   <% end %>
 </ul>
 </div>

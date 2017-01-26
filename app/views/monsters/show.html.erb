@@ -44,8 +44,13 @@
   <div class="large-6 small-12 column">
     <%= link_to 'Rate this monster', new_monster_review_path(@monster) %>
   </div>
+
   <div class="large-6 small-12 column">
-    <%= link_to 'Edit this monster', edit_monster_path(@monster) %>
+  <% if !current_user.nil? %>
+    <% if current_user.id == @monster.user_id || current_user.admin? %>
+      <%= link_to 'Edit this monster', edit_monster_path(@monster) %>
+    <% end %>
+  <% end %>
   </div>
 </div>
 
@@ -66,7 +71,11 @@
       <% downvotes = Vote.where(review_id: review.id, value: "-") %>
       <%= upvotes.length %> user(s) agree(s) | <%= downvotes.length %> user(s) disagree(s)
     </div>
-    <%= link_to 'Edit review', edit_monster_review_path(@monster, review) %>
+      <% if !current_user.nil? %>
+        <% if current_user.id == review.user_id || current_user.admin? %>
+          <%= link_to 'Edit review', edit_monster_review_path(@monster, review) %>
+        <% end %>
+      <% end %>
     <% end %>
 <% end %>
 </div>

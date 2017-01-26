@@ -94,9 +94,16 @@ class MonstersController < ApplicationController
   end
 
   def destroy
-    name = @monster.name
-    @monster.destroy
-    redirect_to monsters_url, notice: 'Monster was successfully destroyed.'
+    if !user_signed_in?
+      flash[:notice] = "You are not authorized to delete this monster"
+      render :edit
+    elsif current_user.id == @monster.user_id || current_user.admin?
+      @monster.destroy
+      redirect_to monsters_url, notice: 'Monster was successfully destroyed.'
+    else
+      flash[:notice] = "You are not authorized to delete this monster"
+      render :edit
+    end
   end
 
   private
