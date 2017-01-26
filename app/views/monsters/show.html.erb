@@ -1,11 +1,13 @@
 <div>
   <%= link_to 'All Monsters', monsters_path %>
 </div>
-
+<div class="row text-center white-text" id="show-monster-banner">
 <h1><%= @monster.name %></h1>
+</div>
 
-<h2>About Me</h2>
-<ul>
+<div class="row text-center bold">
+<h3>About Me</h3>
+<ul class="no-bullets bold">
   <li><img src= '<%= @monster.img %>' /></li>
   <li><a href= '<%= @monster.source %>'>Source</a></li>
   <% unless @monster.description.nil? %>
@@ -15,33 +17,49 @@
     <li><a href= 'mailto:<%= @monster.email %>'>Contact Me</a></li>
   <% end %>
 </ul>
+</div>
 
-<h2>What Users Think of Me:</h2>
-<ul>
-  <li><h3>Average grossness level:</h3> <%= @monster.grossness %>/6</li>
-  <li><h3>Average scariness level:</h3> <%= @monster.scariness %>/6</li>
-  <li><h3>Average cleverness level:</h3> <%= @monster.cleverness %>/6</li>
-  <li><h3>Average bigness level:</h3> <%= @monster.bigness %>/6</li>
-  <li><h3>Average badness level:</h3> <%= @monster.badness %>/6</li>
+<div class="row text-center bold">
+<h3>What Users Think of Me:</h3>
+<ul class="no-bullets">
+  <div class="large-4 small-12 column">
+  <li><h4>Average grossness level:</h4> <%= @monster.grossness %>/6</li>
+  </div>
+  <div class="large-4 small-12 column">
+  <li><h4>Average scariness level:</h4> <%= @monster.scariness %>/6</li>
+  </div>
+  <div class="large-4 small-12 column">
+  <li><h4>Average cleverness level:</h4> <%= @monster.cleverness %>/6</li>
+  </div>
+  <div class="large-6 small-12 column">
+  <li><h4>Average bigness level:</h4> <%= @monster.bigness %>/6</li>
+  </div>
+  <div class="large-6 small-12 column">
+  <li><h4>Average badness level:</h4> <%= @monster.badness %>/6</li>
+  </div>
 </ul>
-
-<div>
-  <%= link_to 'Rate this monster', new_monster_review_path(@monster) %>
 </div>
 
-<div>
-  <%= link_to 'Edit this monster', edit_monster_path(@monster) %>
+<div class="row text-center">
+  <div class="large-6 small-12 column">
+    <%= link_to 'Rate this monster', new_monster_review_path(@monster) %>
+  </div>
+  <div class="large-6 small-12 column">
+    <%= link_to 'Edit this monster', edit_monster_path(@monster) %>
+  </div>
 </div>
 
-<h1>Ratings</h1>
+<div class="row text-center">
+<h3>Ratings</h3>
 <% if @reviews.nil? %>
   We don't have any ratings for this monster yet!
 <% else %>
-  <ul>
     <% @reviews.each do |review| %>
-    <li><%= render partial: 'review', locals: {review: review} %></li>
-    <div>
-      <%= render partial: 'upvote', locals: {review: review} %> <%= render partial: 'downvote', locals: {review: review} %>
+    <%= render partial: 'review', locals: {review: review} %>
+    <div class="vote-buttons">
+      <%= render partial: 'upvote', locals: {review: review} %>
+
+      <%= render partial: 'downvote', locals: {review: review} %>
     </div>
     <div>
       <% upvotes = Vote.where(review_id: review.id, value: "+") %>
@@ -50,5 +68,5 @@
     </div>
     <%= link_to 'Edit review', edit_monster_review_path(@monster, review) %>
     <% end %>
-  </ul>
 <% end %>
+</div>
