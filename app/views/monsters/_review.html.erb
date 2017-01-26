@@ -1,12 +1,24 @@
-<h2><%= review.user.username %> has this to say about <%= @monster.name %></h2>
+<div id="add-background-light">
+<h3><%= review.user.username %> has this to say about <%= @monster.name %>:</h3>
+<ul class="no-bullets">
+  <div class="large-4 small-12 column">
+  <li><h4>Grossness level:</h4> <%= review.grossness %>/6</li>
+  </div>
+  <div class="large-4 small-12 column">
+  <li><h4>Scariness level:</h4> <%= review.scariness %>/6</li>
+  </div>
+  <div class="large-4 small-12 column">
+  <li><h4>Cleverness level:</h4> <%= review.cleverness %>/6</li>
+  </div>
+  <div class="large-6 small-12 column">
+  <li><h4>Bigness level:</h4> <%= review.bigness %>/6</li>
+  </div>
+  <div class="large-6 small-12 column">
+  <li><h4>Badness level:</h4> <%= review.badness %>/6</li>
+  </div>
 
-<ul>
-  <li><h3>Grossness level:</h3> <%= review.grossness %>/6</li>
-  <li><h3>Scariness level:</h3> <%= review.scariness %>/6</li>
-  <li><h3>Cleverness level:</h3> <%= review.cleverness %>/6</li>
-  <li><h3>Bigness level:</h3> <%= review.bigness %>/6</li>
-  <li><h3>Badness level:</h3> <%= review.badness %>/6</li>
 </ul>
 <% unless review.body.nil? %>
   <h3>Additional feedback:</h3> <%= review.body %>
 <% end %>
+</div>

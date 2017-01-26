@@ -1,8 +1,10 @@
+<div class="row text-center white-text" id="add-monster-banner">
 <h1>Edit rating for <%= @monster.name %></h1>
-
+</div>
+<div class="row text-center" id="add-background-light">
 <%= render 'form' %>
-
 <br />
 <%= link_to 'Delete', [@monster, @review], method: :delete, data: { confirm: 'Are you sure?' } %>
  |
- <%= link_to 'Back', [@monster, @review] %>
+ <%= link_to 'Back', @monster %>
+</div>

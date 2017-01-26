@@ -1,6 +1,7 @@
 class VotesController < ApplicationController
   before_action :set_review
   before_action :set_monster
+  before_action :authenticate_user!
 
   def handle_vote
     matching_votes = Vote.where(user_id: current_user.id, review_id: @review.id)

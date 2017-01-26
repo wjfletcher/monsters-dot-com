@@ -1,8 +1,16 @@
 <div>
+
+</div>
+<div class="row text-center white-text" id="add-monster-banner">
+<h1><%= @user.username %></h1>
+</div>
+<div class="row text-center" id="add-background-light">
+  <% if !@user.avatar.nil? %>
+    <%= image_tag @user.avatar %>
+  <% end %>
+  <h2><%= @user.email %></h2>
+
   <%= link_to 'All Users', admin_users_path %>
    |
   <%= link_to 'Delete User', [:admin, @user], method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>
-
-<h1><%= @user.username %></h1>
-<h2><%= @user.email %></h2>
