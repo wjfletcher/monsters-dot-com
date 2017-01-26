@@ -81,6 +81,9 @@ class MonstersController < ApplicationController
 
   def create
     @monster = Monster.new(monster_params)
+    if @monster.img.empty?
+      @monster.img = "https://www.acefitness.org/myace/images/contactimage/no_phototn.jpg"
+    end
     @monster.user_id = current_user.id
     if @monster.save
       flash[:notice] = (@monster.name + " added successfully.")
