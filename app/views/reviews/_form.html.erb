@@ -1,33 +1,36 @@
 <%= form_for [@monster, @review] do |f| %>
 
   <div class="form-element">
-    <%= f.label :grossness, "This monster's grossness level:" %><br />
+    <%= f.label :grossness, "This monster's grossness level:" %>
     Cute <%= f.range_field :grossness, in: 0..6 %> Ugly
   </div>
-
+  <br />
   <div class="form-element">
-    <%= f.label :scariness, "This monster's scariness level:" %><br />
+    <%= f.label :scariness, "This monster's scariness level:" %>
     Silly <%= f.range_field :scariness, in: 0..6 %> Scary
   </div>
-
+  <br />
   <div class="form-element">
-    <%= f.label :cleverness, "This monster's cleverness level:" %><br />
+    <%= f.label :cleverness, "This monster's cleverness level:" %>
     Derpy <%= f.range_field :cleverness, in: 0..6 %> Devious
   </div>
+  <br />
 
   <div class="form-element">
-    <%= f.label :bigness, "This monster's bigness level:" %><br />
+    <%= f.label :bigness, "This monster's bigness level:" %>
     Smol <%= f.range_field :bigness, in: 0..6 %> Huge
   </div>
+  <br />
 
   <div class="form-element">
-    <%= f.label :badness, "This monster's badness level:" %><br />
+    <%= f.label :badness, "This monster's badness level:" %>
     Good <%= f.range_field :badness, in: 0..6 %> Evil
   </div>
-
+  <br />
   <div class="form-element">
-    <%= f.label :body, "Additional feedback on this monster?" %><br />
-    <%= f.text_field :body %>
+    <%= f.label :body, "Additional feedback on this monster?" %>
+    <%= f.text_area :body %>
+    <br />
   </div>
 
   <div class="form-element">

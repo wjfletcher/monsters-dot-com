@@ -6,7 +6,7 @@
 </div>
 <div class="row text-center" id="add-background-light">
   <% if !@user.avatar.nil? %>
-    <%= @user.avatar %>
+    <%= image_tag @user.avatar %>
   <% end %>
   <h2><%= @user.email %></h2>
 
