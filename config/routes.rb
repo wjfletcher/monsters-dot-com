@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "monsters#home"
+  root "monsters#index"
   devise_for :users
   resources :users, only: [:show]
   resources :monsters do
