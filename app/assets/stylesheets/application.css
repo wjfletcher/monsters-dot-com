@@ -16,6 +16,7 @@
 
  */
 
+
  body {
    color: #717171;
  }
@@ -43,6 +44,12 @@
   max-width: 100%;
   min-height: auto;
   width: 300px;
+}
+
+.nav-links {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #recently-added-monsters {
