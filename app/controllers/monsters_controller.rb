@@ -33,7 +33,7 @@ class MonstersController < ApplicationController
         attribute_search = "cleverness"
       when "devious"
         attribute_search = "cleverness"
-        attributersp_ascending = false
+        attribute_ascending = false
       when "smol"
         attribute_search = "bigness"
       when "huge"
