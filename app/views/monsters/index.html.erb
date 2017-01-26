@@ -8,9 +8,7 @@
     <li><h3><%= link_to monster.name, monster %> </h3></li>
   <% end %>
 </ul>
+<%= link_to 'Add new monster', new_monster_path, class: "button" %>
 </div>
 
 <div id="app"></div>
-
-
-<%= link_to 'New', new_monster_path %>

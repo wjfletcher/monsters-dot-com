@@ -6,7 +6,6 @@
 </div>
 
 <div class="row text-center bold">
-<h3>About Me</h3>
 <ul class="no-bullets bold">
   <li><img src= '<%= @monster.img %>' /></li>
   <li><a href= '<%= @monster.source %>'>Source</a></li>
@@ -19,40 +18,50 @@
 </ul>
 </div>
 
-<div class="row text-center bold">
-<h3>What Users Think of Me:</h3>
+<div class="text-center">
+<h3>What Users Think of Me</h3>
+</div>
+<div class="row text-center bold" id="add-background-light">
 <ul class="no-bullets">
   <div class="large-4 small-12 column">
-  <li><h4>Average grossness level:</h4> <%= @monster.grossness %>/6</li>
+    <li><h4>Average grossness level:</h4> <%= @monster.grossness %>/6</li>
   </div>
   <div class="large-4 small-12 column">
-  <li><h4>Average scariness level:</h4> <%= @monster.scariness %>/6</li>
+    <li><h4>Average scariness level:</h4> <%= @monster.scariness %>/6</li>
   </div>
   <div class="large-4 small-12 column">
-  <li><h4>Average cleverness level:</h4> <%= @monster.cleverness %>/6</li>
+    <li><h4>Average cleverness level:</h4> <%= @monster.cleverness %>/6</li>
   </div>
   <div class="large-6 small-12 column">
-  <li><h4>Average bigness level:</h4> <%= @monster.bigness %>/6</li>
+    <li><h4>Average bigness level:</h4> <%= @monster.bigness %>/6</li>
   </div>
   <div class="large-6 small-12 column">
-  <li><h4>Average badness level:</h4> <%= @monster.badness %>/6</li>
+    <li><h4>Average badness level:</h4> <%= @monster.badness %>/6</li>
   </div>
 </ul>
 </div>
 
 <div class="row text-center">
-  <div class="large-6 small-12 column">
-    <%= link_to 'Rate this monster', new_monster_review_path(@monster) %>
-  </div>
-
-  <div class="large-6 small-12 column">
   <% if !current_user.nil? %>
     <% if current_user.id == @monster.user_id || current_user.admin? %>
-      <%= link_to 'Edit this monster', edit_monster_path(@monster) %>
+      <div class="large-6 small-12 column">
+        <%= link_to 'Edit this monster', edit_monster_path(@monster) %>
+      </div>
+      <div class="large-6 small-12 column">
+        <%= link_to 'Rate this monster', new_monster_review_path(@monster) %>
+      </div>
+    <% else %>
+      <div class="large-12 small-12 column">
+        <%= link_to 'Rate this monster', new_monster_review_path(@monster) %>
+      </div>
     <% end %>
+  <% else %>
+    <div class="large-12 small-12 column">
+      <%= link_to 'Rate this monster', new_monster_review_path(@monster) %>
+    </div>
   <% end %>
-  </div>
 </div>
+
 
 <div class="row text-center">
 <h3>Ratings</h3>
