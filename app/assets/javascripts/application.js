@@ -15,4 +15,58 @@
 //= require foundation
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  $(document).foundation();
+});
+
+$(document).ready(function() {
+if (document.getElementById('upvote')) {
+  $('#upvote').on('click', function(me) {
+     me.preventDefault();
+
+     var $this = $(this);
+     var reviewId = document.getElementById('upvote').dataset.reviewid;
+     var monsterId = document.getElementById('upvote').dataset.monsterid;
+
+     var request = $.ajax({
+        method: "POST",
+        url: '/monsters/' + monsterId + '/reviews/' + reviewId + '/votes/handle_vote',
+        data: { value: "+" }
+      });
+
+      request.done(function(data) {
+        var existing_count = $('#upvote-count').text();
+        console.log("existing_count:");
+        console.log(existing_count);
+        var new_count = parseInt(existing_count) + 1;
+        console.log("new_count:");
+        console.log(new_count);
+        $('#upvote-count').html(`${new_count}`);
+      });
+   });
+
+  $('#downvote').on('click', function(me) {
+    me.preventDefault();
+
+     var $this = $(this);
+     var reviewId = document.getElementById('downvote').dataset.reviewid;
+     var monsterId = document.getElementById('downvote').dataset.monsterid;
+
+     var request = $.ajax({
+        method: "POST",
+        url: '/monsters/' + monsterId + '/reviews/' + reviewId + '/votes/handle_vote',
+        data: { value: "-" }
+      });
+
+      request.done(function(data) {
+        var existing_count = $('#downvote-count').text();
+        console.log("existing_count:");
+        console.log(existing_count);
+        var new_count = parseInt(existing_count) - 1;
+        console.log("new_count:");
+        console.log(new_count);
+        $('#downvote-count').html(`${new_count}`);
+      });
+    });
+  }
+});

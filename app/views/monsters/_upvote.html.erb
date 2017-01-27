@@ -1,4 +1,4 @@
 <%= form_for(@vote, url: handle_vote_monster_review_votes_path(@monster, review)) do |f| %>
   <%= hidden_field_tag(:value, '+') %>
-  <%= f.submit 'Agree', class: "button" %>
+  <%= f.submit 'Agree', class: "button", id: "upvote", data: {monsterId: @monster.id, reviewId: review.id} %>
 <% end %>
