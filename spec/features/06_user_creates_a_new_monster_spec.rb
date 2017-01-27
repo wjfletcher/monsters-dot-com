@@ -39,6 +39,5 @@ feature "users can add monsters" do
     click_button "Save"
     expect(page).to have_content "Name can't be blank"
     expect(page).to have_content "Source can't be blank"
-    expect(page).to have_content "Img can't be blank"
   end
 end
