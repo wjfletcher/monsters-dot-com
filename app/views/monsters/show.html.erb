@@ -1,13 +1,11 @@
-<div>
-  <%= link_to 'All Monsters', monsters_path %>
-</div>
+
 <div class="row text-center white-text" id="show-monster-banner">
 <h1><%= @monster.name %></h1>
 </div>
 
 <div class="row text-center bold">
 <ul class="no-bullets bold">
-  <li><img src= '<%= @monster.img %>' /></li>
+  <li><img src= '<%= @monster.img %>' width="700px"/></li>
   <li><a href= '<%= @monster.source %>'>Source</a></li>
   <% unless @monster.description.nil? %>
     <li><%= @monster.description %></li>
