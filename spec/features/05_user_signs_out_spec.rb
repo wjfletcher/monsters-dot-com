@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'user signs in' do
+feature 'user signs out' do
   let(:user) do
     User.create(
       email: "user@example.com",
@@ -8,7 +8,7 @@ feature 'user signs in' do
     )
   end
 
-  scenario 'user signs up and logs in with required information' do
+  scenario 'user signs up and logs in then logs out' do
     visit root_path
     click_link 'Sign up'
     fill_in 'Username', with: 'user'
