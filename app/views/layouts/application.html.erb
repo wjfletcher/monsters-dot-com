@@ -36,7 +36,7 @@
                 <% end %>
                 <ul class="menu vertical">
                   <% if user_signed_in? %>
-                    <li><%= link_to 'My profile', edit_user_registration_path %></li>
+                    <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
                     <% if current_user.admin? %>
                       <li><%= link_to 'Manage users', admin_users_path %><li>
                     <% end %>
