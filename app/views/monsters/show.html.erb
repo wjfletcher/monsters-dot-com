@@ -4,15 +4,14 @@
 </div>
 
 <div class="row text-center bold">
-<ul class="no-bullets bold">
+<ul class="no-bullets">
   <li><img src= '<%= @monster.img %>' width="700px"/></li>
-  <li><a href= '<%= @monster.source %>'>Source</a></li>
   <% unless @monster.description.nil? %>
-    <li><%= @monster.description %></li>
+    <li><h4><%= @monster.description %></li></h4>
   <% end %>
   <% unless @monster.email.nil? %>
-    <li><a href= 'mailto:<%= @monster.email %>'>Contact Me</a></li>
-  <% end %>
+    <li><a href= 'mailto:<%= @monster.email %>'>Contact Me</a>
+  <% end %> | <a href= '<%= @monster.source %>'>Source</a></li>
 </ul>
 </div>
 
