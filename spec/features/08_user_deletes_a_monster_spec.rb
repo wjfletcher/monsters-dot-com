@@ -24,7 +24,7 @@ feature "user deletes monster from its edit page" do
 
     expect(page).to have_content monster2.name
 
-    click_link 'Edit'
+    click_link 'Edit this monster'
 
     click_link "Delete"
 
