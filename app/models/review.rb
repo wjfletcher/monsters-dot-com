@@ -6,4 +6,14 @@ class Review < ApplicationRecord
   belongs_to :user
   belongs_to :monster
   has_many :votes
+
+  def upvotes
+    my_votes = Vote.where(review_id: id, value: "+")
+    my_votes.count
+  end
+
+  def downvotes
+    my_votes = Vote.where(review_id: id, value: "-")
+    my_votes.count
+  end
 end

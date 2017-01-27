@@ -166,3 +166,11 @@
   background-size: 100%;
   padding: 120px 10px 120px 10px;
 }
+
+#upvote-count {
+  display: inline;
+}
+
+#downvote-count {
+  display: inline;
+}

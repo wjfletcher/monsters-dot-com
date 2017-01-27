@@ -72,11 +72,7 @@
       <%= render partial: 'upvote', locals: {review: review} %>
       <%= render partial: 'downvote', locals: {review: review} %>
     </div>
-    <div>
-      <% upvotes = Vote.where(review_id: review.id, value: "+") %>
-      <% downvotes = Vote.where(review_id: review.id, value: "-") %>
-      <%= upvotes.length %> user(s) agree(s) | <%= downvotes.length %> user(s) disagree(s) </br></br>
-    </div>
+    <div id="upvote-count"><%= review.upvotes %></div> user(s) agree(s) | <div id="downvote-count"><%= review.downvotes %></div> user(s) disagree(s)</br></br>
     <% if !current_user.nil? %>
       <% if current_user.id == review.user_id || current_user.admin? %>
         <%= link_to 'Edit review', edit_monster_review_path(@monster, review) %>
