@@ -41,8 +41,8 @@ $(document).ready(function() {
         });
 
         response.done(function() {
-          $('#upvote-count').html(`${response.responseJSON.upvotes}`);
-          $('#downvote-count').html(`${response.responseJSON.downvotes}`);
+          $('#upvote-count').html(response.responseJSON.upvotes);
+          $('#downvote-count').html(response.responseJSON.downvotes);
         });
       });
     });
@@ -67,8 +67,8 @@ $(document).ready(function() {
         });
 
         response.done(function() {
-          $('#upvote-count').html(`${response.responseJSON.upvotes}`);
-          $('#downvote-count').html(`${response.responseJSON.downvotes}`);
+          $('#upvote-count').html(response.responseJSON.upvotes);
+          $('#downvote-count').html(response.responseJSON.downvotes);
         });
       });
     });

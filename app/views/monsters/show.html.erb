@@ -3,16 +3,15 @@
 <h1><%= @monster.name %></h1>
 </div>
 
-<div class="row text-center bold">
+<div class="row text-center">
 <ul class="no-bullets bold">
-  <li><img src= '<%= @monster.img %>' width="700px"/></li>
-  <li><a href= '<%= @monster.source %>'>Source</a></li>
+  <li><img src= '<%= @monster.img %>' width="700px"/></li><br />
   <% unless @monster.description.nil? %>
-    <li><%= @monster.description %></li>
+    <li><h4><%= @monster.description %></h4></li>
   <% end %>
   <% unless @monster.email.nil? %>
-    <li><a href= 'mailto:<%= @monster.email %>'>Contact Me</a></li>
-  <% end %>
+    <li><a href= 'mailto:<%= @monster.email %>'>Contact Me</a>
+  <% end %> | <a href= '<%= @monster.source %>'>Source</a></li>
 </ul>
 </div>
 
