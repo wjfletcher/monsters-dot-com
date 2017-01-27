@@ -1,10 +1,17 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:edit, :update, :destroy]
-  before_action :set_monster
+  before_action :set_review, only: [:edit, :show, :update, :destroy]
+  before_action :set_monster, except: [:show]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
 
   def new
     @review = Review.new
+  end
+
+  def show
+    up = @review.upvotes
+    down = @review.downvotes
+    data = {upvotes: up, downvotes: down}
+    render json: data
   end
 
   def create

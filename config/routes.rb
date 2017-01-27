@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "monsters#home"
   devise_for :users
   resources :users, only: [:show]
+  resources :reviews, only: [:show]
   resources :monsters do
     collection do
       get 'home'
@@ -17,12 +18,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:index, :show, :destroy]
-  end
-
-  namespace :api do
-    namespace :v1 do
-      resources :monsters, only: [:index, :home, :create]
-    end
   end
 
 end
