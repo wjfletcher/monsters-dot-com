@@ -123,6 +123,15 @@
   width: 150px;
 }
 
+.score-circle {
+  background-color: #FFF;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #monster-list {
   margin: 0;
 }
