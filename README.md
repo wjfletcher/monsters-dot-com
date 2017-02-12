@@ -16,6 +16,6 @@ MonsterS is a lighthearted app for reviewing mythical monsters from movies and h
 
 ## Team Members
 
-Jonathan Braun
-Suzi Curran
-Lisa Hernandez
+- Jonathan Braun
+- Suzi Curran
+- Lisa Hernandez
